@@ -1,0 +1,48 @@
+---
+const reviews = [
+  {
+    img: '/default-user.jpg',
+    review: 'Desde hace mucho, buscaba cursos online que de verdad tuvieran calidad y me ayudaran a mejorar mi gusto a ofrecer a mis amigos ricos tragos a la hora de compartir\nQue suerte encontrarlos. Los súper recomiendo 👏👏',
+    name: 'Diego Contreras',
+    course: 'Cocteleria'
+  },
+  {
+    img: '/default-user.jpg',
+    review: 'El curso de Masajista Master fue justo lo que necesitaba para mejorar mis habilidades como masajista. Me encantó que fuera en línea, ya que pude aprender a mi propio ritmo y practicar en casa. Ahora me siento más segura y preparada para ofrecer masajes profesionales a mis clientes. ¡Gracias por brindarme esta oportunidad!',
+    name: 'Carla Martínez',
+    course: 'Masajista'
+  }
+]
+---
+
+<section class="border-t border-gray-200 dark:border-gray-800">
+  <div class="container grid items-start gap-12 px-4 py-12 md:grid-cols-2 md:px-6 md:py-24 mx-auto">
+    <div class="space-y-4">
+      <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-black dark:text-white">
+        Testimonios de Estudiantes
+      </h2><p class="max-w-[600px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
+        Descubre cómo nuestros estudiantes han encontrado éxito en sus
+        nuevas carreras después de completar nuestros cursos.
+      </p>
+    </div>
+      <div class="grid gap-6 sm:grid-cols-2">
+
+        {
+          reviews.map(review => (
+            <div class="flex flex-col gap-2 border border-gray-200 dark:border-gray-800 rounded-lg p-4 shadow-lg bg-gray-100 dark:bg-gray-900 relative">
+              <p class="text-gray-500 text-sm italic leading-loose md:text-base md:text-[16px] text-pretty">
+                {review.review}
+              </p>
+
+              <div class="mt-auto pt-2">
+                <p class="font-medium text-black dark:text-white">{review.name}</p>
+                <p class="text-xs text-black dark:text-gray-500">{review.course}</p>
+              </div>
+            </div>
+          ))
+        }
+
+
+    </div>
+  </div>
+</section>

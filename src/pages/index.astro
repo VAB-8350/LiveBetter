@@ -1,0 +1,97 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Presentation from '@/components/Presentation.astro'
+import PopularCourses from '@/components/PopularCourses.astro'
+import Course from '@/components/Course.astro'
+import Reviews from '@/components/Reviews.astro'
+import LastCallToAction from '@/components/LastCallToAction.astro'
+
+const courses = [
+	{
+    id: 'panaderia',
+		title: 'Panadería Artesanal Ítalo Argentina',
+    description: [
+			'¿Alguna vez has deseado conocer los secretos detrás de los deliciosos sabores de la panadería artesanal ítalo-argentina? ¡Ahora tienes la oportunidad!',
+			'Aprende las técnicas tradicionales para elaborar la auténtica masa madre, cuyo legado se remonta a generaciones en estos dos países cuya gastronomía es venerada por maestros panaderos de renombre.',
+			'Descubre los secretos detrás de la preparación de panes recién horneados que cautivarán a tus invitados y clientes con su aroma irresistible. ¡Nada se compara con el placer de disfrutar de un pan recién salido del horno!',
+			'No dejes pasar esta oportunidad única para destacarte en el negocio de la panadería artesanal, donde tus productos se venderán como pan caliente. Haz clic en "Ver Curso" y únete a nosotros en este emocionante viaje culinario.'
+		],
+		image: '/panaderia.webp',
+    link: 'https://go.hotmart.com/M91616831F'
+  },
+	{
+    id: 'chocolateria',
+		title: 'Curso Chocolatería Online',
+    description: [
+			'¿Quieres añadir un toque de magia a tus postres y deleitar a tus seres queridos con creaciones únicas? ¡Entonces este Curso de Chocolatería Online es para ti!',
+			'Sumérgete en el apasionante mundo del chocolate y aprende técnicas innovadoras y recetas cautivadoras que te permitirán dominar el arte de la pastelería con estilo. Desde pasteles exquisitos hasta pequeños caprichos dulces, este curso te proporcionará las habilidades esenciales para destacar en el mundo culinario.',
+			'Ya sea que busques perfeccionar tus habilidades como pastelero o desees llevar tu emprendimiento en el ámbito de la pastelería al siguiente nivel, este curso te brindará los conocimientos y la inspiración necesarios para triunfar. ¡No importa dónde te encuentres o cuál sea tu nivel de experiencia, siempre es el momento perfecto para explorar tu pasión por el chocolate!',
+			'Conviértete en un maestro chocolatero desde la comodidad de tu hogar. Haz clic en "Ver Curso" y comienza tu viaje hacia la dulce perfección hoy mismo.'
+		],
+		image: '/chocolateria.webp',
+    link: 'https://go.hotmart.com/J91616918W'
+  },
+	{
+    id: 'cocteleria',
+		title: 'Curso Coctelería de Autor Online',
+    description: [
+			'¿Te apasiona la mixología y sueñas con crear tus propios cócteles únicos? ¿Quieres sorprender a tus amigos y familiares con creaciones dignas de un bar de alta gama? Entonces, nuestro Curso de Coctelería de Autor Online es perfecto para ti.',
+			'A diferencia de lo que muchos piensan, no necesitas años de experiencia para dominar el arte de la coctelería de autor. En este curso, comenzaremos desde las bases de la coctelería clásica para que puedas entender los fundamentos y luego nos sumergiremos en el emocionante mundo de la creación de cócteles de autor.',
+			'Aprenderás técnicas de bar imprescindibles, conocerás las herramientas necesarias para preparar los cócteles perfectos y explorarás una variedad de recetas de cócteles de autor que te inspirarán a crear tus propias obras maestras.',
+			'No te pierdas esta oportunidad única para convertirte en un experto en la coctelería de autor. ¡Haz clic en "Ver Curso" y comienza tu viaje hacia la mixología creativa hoy mismo!'
+		],
+		image: '/cocteleria.webp',
+    link: 'https://go.hotmart.com/B91583554X'
+  },
+	{
+    id: 'pizzero',
+		title: 'Curso de Pizzero de Cero a Experto',
+    description: [
+			'¡Bienvenido al emocionante mundo de la pizza! En nuestro curso, te sumergirás en todo lo que necesitas saber para crear las pizzas más deliciosas en tres tamaños diferentes: 27, 35 y 40.',
+			'Aprenderás las técnicas para preparar la masa a mano o con una máquina industrial, así como el proceso de embolado y el crecimiento de la masa para obtener la textura perfecta. También te revelaremos nuestro secreto para hornear masas que se conservan frescas por más de 20 días, y cómo preparar una pasta de tomate exquisita con solo tres ingredientes.',
+			'Te enseñaremos cuatro estilos de pizzas de renombre: Napolitana, Dóminos, Santorino y Casera. Además, te mostraremos cómo promocionar tus creaciones a través de las redes sociales, ya sea con publicidad gratuita o de pago, y cómo organizar entregas a domicilio y envíos.',
+			'¡Únete a nosotros en este viaje gastronómico y conviértete en un experto pizzero!  Haz clic en "Ver Curso" y comienza a crear las pizzas de tus sueños hoy mismo.'
+		],
+		image: '/pizzero.webp',
+    link: 'https://go.hotmart.com/V91616967Y?ap=c3f3'
+  },
+	{
+    id: 'pasteleria',
+		title: 'Diplomado en Pastelería Premium',
+    description: [
+			'¡Bienvenido al emocionante mundo del Diplomado en Pastelería Premium con Flores, impartido por Karla Palacio!',
+			'Este diplomado te llevará en un viaje de 60 días hacia la creación de los postres más exclusivos, mientras aprendes a convertir tu pasión por la pastelería en una fuente de ingresos altamente rentable.',
+			'Contarás con Pasteleras Premium, que es una comunidad selecta donde solo se reúnen personas como tú, que aspiran a destacarse como pasteleros profesionales y a construir negocios exitosos a través de su amor por la cocina.',
+			'¡No pierdas la oportunidad de unirte a esta comunidad privilegiada y dar el siguiente paso en tu carrera culinaria! Haz clic en "Ver Curso" y comienza tu viaje hacia la excelencia en la pastelería premium con flores.'
+		],
+		image: '/pasteleria.webp',
+    link: 'https://go.hotmart.com/A91617054U?dp=1'
+  },
+	{
+    id: 'masajista',
+		title: 'Masajista Master',
+    description: [
+			'¿Sabías que el estrés es uno de los principales desencadenantes de enfermedades en nuestra vida diaria? Entre las noticias desalentadoras y las tensiones cotidianas, es crucial encontrar formas efectivas de cuidar nuestra salud y bienestar.',
+			'Con este curso de masaje, puedes marcar la diferencia tanto para ti como para tu familia. Desde técnicas básicas hasta niveles profesionales, aprenderás cómo convertirte en un maestro del masaje y mejorar la calidad de vida de quienes te rodean, generando ingresos en el camino.',
+			'Nota: Este curso complementa, pero no sustituye la opinión de profesionales de la salud. Siempre consulta con un especialista para tratar cuestiones médicas.',
+			'¡Haz clic en "Ver Curso" y descubre el poder sanador del masaje!'
+		],
+		image: '/masajista.webp',
+    link: 'https://go.hotmart.com/H91751662S'
+  }
+]
+---
+
+<Layout title="Descubre Cursos para Trabajar y Viajar por el Mundo">
+  <div class="px-4 py-6 md:px-6 md:py-12 lg:py-16">
+    <Presentation />
+		<PopularCourses />
+		{
+			courses.map((course, index) => (
+				<Course id={course.id} title={course.title} description={course.description} image={course.image} link={course.link} revert={index % 2} />
+			))
+		}
+		<Reviews />
+		<LastCallToAction />
+  </div>
+</Layout>
